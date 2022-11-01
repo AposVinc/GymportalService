@@ -139,7 +139,7 @@ public class GymServiceImpl extends Service implements GymService {
 					gym.setRegion(rs.getString(5));
 					gym.setProvince(rs.getString(4));
 					gym.setAddress(rs.getString(2));
-					gym.setUser(rs.getLong(6));
+					gym.setUserId(rs.getLong(6));
 				}
 			}
 
@@ -160,7 +160,7 @@ public class GymServiceImpl extends Service implements GymService {
 			st.setString(4, gym.getRegion());
 			st.setString(3, gym.getProvince());
 			st.setString(1, gym.getAddress());
-			st.setLong(5, gym.getUser());
+			st.setLong(5, gym.getUserId());
 
 			st.execute();
 

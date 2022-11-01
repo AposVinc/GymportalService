@@ -11,7 +11,7 @@ public class Course {
 	private String name;
 	private String description;
 	private String code;
-	private long gym;
+	private long gym_id;
 
 //	@JsonIgnore
 	private List<FeedbackCourse> feedbackCourse;
@@ -23,15 +23,15 @@ public class Course {
 		this.name = "";
 		this.description = "";
 		this.code = "";
-		this.gym = 0;
+		this.gym_id = 0;
 	}
 
-	public Course(long id, String name, String description, String code, long gym) {
+	public Course(long id, String name, String description, String code, long gym_id) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.code = code;
-		this.gym = gym;
+		this.gym_id = gym_id;
 	}
 
 	public long getId() {
@@ -82,12 +82,12 @@ public class Course {
 		this.favoriteCourse = favoriteCourse;
 	}
 
-	public long getGym() {
-		return gym;
+	public long getGymId() {
+		return gym_id;
 	}
 
-	public void setGym(long gym) {
-		this.gym = gym;
+	public void setGymId(long gym_id) {
+		this.gym_id = gym_id;
 	}
 
 	@Override

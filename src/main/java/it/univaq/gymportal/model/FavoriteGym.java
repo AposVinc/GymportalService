@@ -6,18 +6,18 @@ public class FavoriteGym {
 
 	private long id;
 	private long user;
-	private long gym;
+	private long gym_id;
 
 	public FavoriteGym() {
 		this.id = 0;
 		this.user = 0;
-		this.gym = 0;
+		this.gym_id = 0;
 	}
 
-	public FavoriteGym(long id, long user, long gym) {
+	public FavoriteGym(long id, long user, long gym_id) {
 		this.id = id;
 		this.user = user;
-		this.gym = gym;
+		this.gym_id = gym_id;
 	}
 
 	public long getId() {
@@ -36,12 +36,12 @@ public class FavoriteGym {
 		this.user = user;
 	}
 
-	public long getGym() {
-		return gym;
+	public long getGymId() {
+		return gym_id;
 	}
 
-	public void setGym(long gym) {
-		this.gym = gym;
+	public void setGymId(long gym_id) {
+		this.gym_id = gym_id;
 	}
 
 
@@ -55,6 +55,6 @@ public class FavoriteGym {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getUser(), getGym());
+		return Objects.hash(getId(), getUser(), getGymId());
 	}
 }

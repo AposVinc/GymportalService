@@ -22,7 +22,7 @@ public class FavoriteGymServiceImpl extends Service implements FavoriteGymServic
 
         try (Connection connection = DriverManager.getConnection(urlDB, userDB, pswDB);
              PreparedStatement st = connection.prepareStatement(INSERT_FAVORITE_GYM, Statement.RETURN_GENERATED_KEYS);) {
-            st.setLong(1,favoriteGym.getGym());
+            st.setLong(1,favoriteGym.getGymId());
             st.setLong(2,favoriteGym.getUser());
             st.execute();
 

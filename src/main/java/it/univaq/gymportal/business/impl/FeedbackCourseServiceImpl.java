@@ -28,7 +28,7 @@ public class FeedbackCourseServiceImpl extends Service implements FeedbackCourse
             st.setString(1,feedbackCourse.getFeed());
             st.setInt(2,feedbackCourse.getRating());
             st.setLong(3,feedbackCourse.getCourse());
-            st.setLong(4,feedbackCourse.getUser());
+            st.setLong(4,feedbackCourse.getUserId());
 
             st.execute();
 
@@ -58,7 +58,7 @@ public class FeedbackCourseServiceImpl extends Service implements FeedbackCourse
                     feedbackCourse.setId(rs.getLong(1));
                     feedbackCourse.setRating(rs.getInt(3));
                     feedbackCourse.setFeed(rs.getString(2));
-                    feedbackCourse.setUser(rs.getLong(6));
+                    feedbackCourse.setUserId(rs.getLong(6));
                     feedbackCourse.setUserName(rs.getString(7));
                     feedbackCourse.setUserLastname(rs.getString(8));
                     feedbackCourse.setCourse(rs.getLong(4));
@@ -87,7 +87,7 @@ public class FeedbackCourseServiceImpl extends Service implements FeedbackCourse
                     feedbackCourse.setId(rs.getLong(1));
                     feedbackCourse.setRating(rs.getInt(3));
                     feedbackCourse.setFeed(rs.getString(2));
-                    feedbackCourse.setUser(rs.getLong(6));
+                    feedbackCourse.setUserId(rs.getLong(6));
                     feedbackCourse.setUserName(rs.getString(7));
                     feedbackCourse.setUserLastname(rs.getString(8));
                     feedbackCourse.setCourse(rs.getLong(4));
@@ -115,7 +115,7 @@ public class FeedbackCourseServiceImpl extends Service implements FeedbackCourse
                     feedbackCourse.setId(rs.getLong(1));
                     feedbackCourse.setRating(rs.getInt(3));
                     feedbackCourse.setFeed(rs.getString(2));
-                    feedbackCourse.setUser(rs.getLong(6));
+                    feedbackCourse.setUserId(rs.getLong(6));
                     feedbackCourse.setUserName(rs.getString(7));
                     feedbackCourse.setUserLastname(rs.getString(8));
                     feedbackCourse.setCourse(rs.getLong(4));

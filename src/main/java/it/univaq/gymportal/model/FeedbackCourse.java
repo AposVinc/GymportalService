@@ -7,7 +7,7 @@ public class FeedbackCourse {
 	private long id;
 	private String feed;
 	private int rating;
-	private long user;
+	private long user_id;
 	private String userName;
 	private String userLastname;
 	private long course;
@@ -17,16 +17,16 @@ public class FeedbackCourse {
 		this.id = 0;
 		this.feed = "";
 		this.rating = 0;
-		this.user = 0;
+		this.user_id = 0;
 		this.course = 0;
 	}
 
-	public FeedbackCourse(long id, String feed, int rating, long user, long course) {
+	public FeedbackCourse(long id, String feed, int rating, long user_id, long course) {
 
 		this.id = id;
 		this.feed = feed;
 		this.rating = rating;
-		this.user = user;
+		this.user_id = user_id;
 		this.course = course;
 	}
 
@@ -54,12 +54,12 @@ public class FeedbackCourse {
 		this.rating = rating;
 	}
 
-	public long getUser() {
-		return user;
+	public long getUserId() {
+		return user_id;
 	}
 
-	public void setUser(long user) {
-		this.user = user;
+	public void setUserId(long user_id) {
+		this.user_id = user_id;
 	}
 
 	public long getCourse() {

@@ -22,8 +22,8 @@ public class FavoriteCourseServiceImpl extends Service implements FavoriteCourse
 
         try (Connection connection = DriverManager.getConnection(urlDB, userDB, pswDB);
              PreparedStatement st = connection.prepareStatement(INSERT_FAVORITE_COURSE, Statement.RETURN_GENERATED_KEYS);) {
-            st.setLong(1,favoriteCourse.getCourse());
-            st.setLong(2,favoriteCourse.getUser());
+            st.setLong(1,favoriteCourse.getCourseId());
+            st.setLong(2,favoriteCourse.getUserId());
             st.execute();
 
             try (ResultSet result = st.getGeneratedKeys();) {
@@ -53,7 +53,7 @@ public class FavoriteCourseServiceImpl extends Service implements FavoriteCourse
                     course.setCode(rs.getString(2));
                     course.setName(rs.getString(4));
                     course.setDescription(rs.getString(3));
-                    course.setGym(rs.getLong(5));
+                    course.setGymId(rs.getLong(5));
 
                     favoriteCourses.add(course);
                 }

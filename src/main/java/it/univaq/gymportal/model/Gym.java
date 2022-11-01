@@ -12,7 +12,7 @@ public class Gym {
 	private String address;
 	private String province;
 	private String region;
-	private long user;
+	private long user_id;
 
 //	@JsonIgnore
 	private List<FeedbackGym> feedbackGym;
@@ -28,16 +28,16 @@ public class Gym {
 		this.address = "";
 		this.province = "";
 		this.region = "";
-		this.user = 0;
+		this.user_id = 0;
 	}
 
-	public Gym(long id, String name, String address, String province, String region, long user) {
+	public Gym(long id, String name, String address, String province, String region, long user_id) {
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.province = province;
 		this.region = region;
-		this.user = user;
+		this.user_id = user_id;
 	}
 
 	public long getId() {
@@ -104,12 +104,12 @@ public class Gym {
 		this.course = course;
 	}
 
-	public long getUser() {
-		return user;
+	public long getUserId() {
+		return user_id;
 	}
 
-	public void setUser(long user) {
-		this.user = user;
+	public void setUserId(long user_id) {
+		this.user_id = user_id;
 	}
 
 	@Override
@@ -133,7 +133,7 @@ public class Gym {
 				", address='" + address + '\'' +
 				", province='" + province + '\'' +
 				", region='" + region + '\'' +
-				", user='" + user + '\'' +
+				", user='" + user_id + '\'' +
 				'}';
 	}
 }

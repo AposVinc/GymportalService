@@ -7,26 +7,26 @@ public class FeedbackGym {
 	private long id;
 	private String feed;
 	private int rating;
-	private long user;
+	private long user_id;
 	private String userName;
 	private String userLastname;
-	private long gym;
+	private long gym_id;
 	private String gymName;
 
 	public FeedbackGym() {
 		this.id = 0;
 		this.feed = "";
 		this.rating = 0;
-		this.user = 0;
-		this.gym = 0;
+		this.user_id = 0;
+		this.gym_id = 0;
 	}
 
-	public FeedbackGym(long id, String feed, int rating, long user, long gym) {
+	public FeedbackGym(long id, String feed, int rating, long user_id, long gym_id) {
 		this.id = id;
 		this.feed = feed;
 		this.rating = rating;
-		this.user = user;
-		this.gym = gym;
+		this.user_id = user_id;
+		this.gym_id = gym_id;
 	}
 
 	public long getId() {
@@ -53,20 +53,20 @@ public class FeedbackGym {
 		this.rating = rating;
 	}
 
-	public long getUser() {
-		return user;
+	public long getUserId() {
+		return user_id;
 	}
 
-	public void setUser(long user) {
-		this.user = user;
+	public void setUserId(long user_id) {
+		this.user_id = user_id;
 	}
 
-	public long getGym() {
-		return gym;
+	public long getGymId() {
+		return gym_id;
 	}
 
-	public void setGym(long gym) {
-		this.gym = gym;
+	public void setGymId(long gym_id) {
+		this.gym_id = gym_id;
 	}
 
 	public String getGymName() {
@@ -103,6 +103,6 @@ public class FeedbackGym {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getUser(), getGym());
+		return Objects.hash(getId(), getUserId(), getGymId());
 	}
 }

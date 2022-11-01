@@ -34,7 +34,7 @@ public class CourseServiceImpl extends Service implements CourseService {
                     course.setCode(rs.getString(2));
                     course.setName(rs.getString(4));
                     course.setDescription(rs.getString(3));
-                    course.setGym(rs.getLong(5));
+                    course.setGymId(rs.getLong(5));
 
                     courses.add(course);
                 }
@@ -64,7 +64,7 @@ public class CourseServiceImpl extends Service implements CourseService {
                     course.setCode(rs.getString(2));
                     course.setName(rs.getString(4));
                     course.setDescription(rs.getString(3));
-                    course.setGym(rs.getLong(5));
+                    course.setGymId(rs.getLong(5));
 
                     courses.add(course);
                 }
@@ -91,7 +91,7 @@ public class CourseServiceImpl extends Service implements CourseService {
                     course.setCode(rs.getString(2));
                     course.setName(rs.getString(4));
                     course.setDescription(rs.getString(3));
-                    course.setGym(rs.getLong(5));
+                    course.setGymId(rs.getLong(5));
                 }
             }
 
@@ -111,7 +111,7 @@ public class CourseServiceImpl extends Service implements CourseService {
             st.setString(1, course.getCode());
             st.setString(2, course.getName());
             st.setString(3, course.getDescription());
-            st.setLong(4,course.getGym());
+            st.setLong(4,course.getGymId());
             st.execute();
 
             try (ResultSet result = st.getGeneratedKeys();) {

@@ -47,7 +47,7 @@ public class FeedbackCourseRes {
 
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
-            feedbackCourse.setUser(user.getId());
+            feedbackCourse.setUserId(user.getId());
             feedbackCourse.setCourse(idCourse);
 
             long idFeedback = feedbackCourseService.createFeedbackCourse(feedbackCourse);
@@ -70,7 +70,7 @@ public class FeedbackCourseRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            if (feedbackCourseService.getFeedback(idFeedback).getUser() == user.getId()){
+            if (feedbackCourseService.getFeedback(idFeedback).getUserId() == user.getId()){
                 feedbackCourse.setId(idFeedback);
                 feedbackCourseService.updateFeedbackCourse(feedbackCourse);
 
@@ -93,7 +93,7 @@ public class FeedbackCourseRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            if (feedbackCourseService.getFeedback(idFeedback).getUser() == user.getId()){
+            if (feedbackCourseService.getFeedback(idFeedback).getUserId() == user.getId()){
                 feedbackCourseService.deleteFeedbackCourse(idFeedback);
 
                 return Response.noContent().build();

@@ -49,7 +49,7 @@ public class CourseRes {
         if (securityContext.isUserInRole("gestore")) {
             CourseService courseService = new CourseServiceImpl();
 
-            course.setGym(idGym);
+            course.setGymId(idGym);
 
             long idCourse = courseService.createCourse(course);
 
@@ -110,7 +110,7 @@ public class CourseRes {
         User user = userService.getUserByUsername(username);
         Gym gym = gymService.getGymWithManager(idGym);
 
-        return gym.getUser() == user.getId();
+        return gym.getUserId() == user.getId();
     }
 
 }

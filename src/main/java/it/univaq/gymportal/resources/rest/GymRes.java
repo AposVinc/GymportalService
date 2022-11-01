@@ -51,7 +51,7 @@ public class GymRes {
 
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
-            gym.setUser(user.getId());
+            gym.setUserId(user.getId());
 
             long idGym = gymService.createGym(gym);
 
@@ -118,7 +118,7 @@ public class GymRes {
         User user = userService.getUserByUsername(username);
         Gym gym = gymService.getGymWithManager(idGym);
 
-        return gym.getUser() == user.getId();
+        return gym.getUserId() == user.getId();
     }
 
 }

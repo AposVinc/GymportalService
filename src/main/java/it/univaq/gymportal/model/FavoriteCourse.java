@@ -5,19 +5,19 @@ import java.util.Objects;
 public class FavoriteCourse {
 
 	private long id;
-	private long user;
-	private long course;
+	private long user_id;
+	private long course_id;
 
 	public FavoriteCourse() {
 		this.id = 0;
-		this.user = 0;
-		this.course = 0;
+		this.user_id = 0;
+		this.course_id = 0;
 	}
 
-	public FavoriteCourse(long id, long user, long course) {
+	public FavoriteCourse(long id, long user_id, long course_id) {
 		this.id = id;
-		this.user = user;
-		this.course = course;
+		this.user_id = user_id;
+		this.course_id = course_id;
 	}
 
 	public long getId() {
@@ -28,20 +28,20 @@ public class FavoriteCourse {
 		this.id = id;
 	}
 
-	public long getUser() {
-		return user;
+	public long getUserId() {
+		return user_id;
 	}
 
-	public void setUser(long user) {
-		this.user = user;
+	public void setUserId(long user_id) {
+		this.user_id = user_id;
 	}
 
-	public long getCourse() {
-		return course;
+	public long getCourseId() {
+		return course_id;
 	}
 
-	public void setCourse(long course) {
-		this.course = course;
+	public void setCourseId(long course_id) {
+		this.course_id = course_id;
 	}
 
 	@Override
@@ -54,6 +54,6 @@ public class FavoriteCourse {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getUser(), getCourse());
+		return Objects.hash(getId(), getUserId(), getCourseId());
 	}
 }

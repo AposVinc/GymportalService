@@ -48,8 +48,8 @@ public class FeedbackGymRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            feedbackGym.setUser(user.getId());
-            feedbackGym.setGym(idGym);
+            feedbackGym.setUserId(user.getId());
+            feedbackGym.setGymId(idGym);
 
             long idFeedback = feedbackGymService.createFeedbackGym(feedbackGym);
 
@@ -69,7 +69,7 @@ public class FeedbackGymRes {
 
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
-            if (feedbackGymService.getFeedback(idFeedback).getUser() == user.getId()){
+            if (feedbackGymService.getFeedback(idFeedback).getUserId() == user.getId()){
                 feedbackGym.setId(idFeedback);
                 feedbackGymService.updateFeedbackGym(feedbackGym);
 
@@ -91,7 +91,7 @@ public class FeedbackGymRes {
 
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
-            if (feedbackGymService.getFeedback(idFeedback).getUser() == user.getId()){
+            if (feedbackGymService.getFeedback(idFeedback).getUserId() == user.getId()){
                 feedbackGymService.deleteFeedbackGym(idFeedback);
 
                 return Response.noContent().build();

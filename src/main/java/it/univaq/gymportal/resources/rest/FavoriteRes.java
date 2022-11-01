@@ -10,18 +10,18 @@ import it.univaq.gymportal.exceptions.ServiceException;
 import it.univaq.gymportal.model.FavoriteCourse;
 import it.univaq.gymportal.model.FavoriteGym;
 import it.univaq.gymportal.model.User;
-import it.univaq.gymportal.security.Auth;
+//import it.univaq.gymportal.security.Auth;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
-@Auth
+//@Auth
 public class FavoriteRes {
 
-    private final long idUser;
+    private final long user_id;
 
-    public FavoriteRes(long idUser) {
-        this.idUser = idUser;
+    public FavoriteRes(long user_id) {
+        this.user_id = user_id;
     }
 
     @POST
@@ -35,9 +35,9 @@ public class FavoriteRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            if (idUser == user.getId()){
+            if (user_id == user.getId()){
                 FavoriteGym favoriteGym = new FavoriteGym();
-                favoriteGym.setGym(idGym);
+                favoriteGym.setGymId(idGym);
                 favoriteGym.setUser(user.getId());
                 favoriteGymService.createFavoriteGym(favoriteGym);
 
@@ -60,10 +60,10 @@ public class FavoriteRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            if (idUser == user.getId()){
+            if (user_id == user.getId()){
                 FavoriteCourse favoriteCourse = new FavoriteCourse();
-                favoriteCourse.setCourse(idCourse);
-                favoriteCourse.setUser(user.getId());
+                favoriteCourse.setCourseId(idCourse);
+                favoriteCourse.setUserId(user.getId());
                 favoriteCourseService.createFavoriteCourse(favoriteCourse);
 
                 return Response.created(uriinfo.getAbsolutePathBuilder().build()).build();
@@ -85,8 +85,8 @@ public class FavoriteRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            if (idUser == user.getId()){
-                return Response.ok(favoriteGymService.getAllFavoriteGym(idUser)).build();
+            if (user_id == user.getId()){
+                return Response.ok(favoriteGymService.getAllFavoriteGym(user_id)).build();
             } else {
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
@@ -105,8 +105,8 @@ public class FavoriteRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            if (idUser == user.getId()){
-                return Response.ok(favoriteCourseService.getAllFavoriteCourse(idUser)).build();
+            if (user_id == user.getId()){
+                return Response.ok(favoriteCourseService.getAllFavoriteCourse(user_id)).build();
             } else {
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
@@ -124,7 +124,7 @@ public class FavoriteRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            if (idUser == user.getId()){
+            if (user_id == user.getId()){
                 favoriteGymService.deleteFavoriteGym(user.getId(), idGym);
                 return Response.noContent().build();
             } else {
@@ -144,8 +144,8 @@ public class FavoriteRes {
             String username = securityContext.getUserPrincipal().getName();
             User user = userService.getUserByUsername(username);
 
-            if (idUser == user.getId()){
-                favoriteCourseService.deleteFavoriteCourse(idUser, idCourse);
+            if (user_id == user.getId()){
+                favoriteCourseService.deleteFavoriteCourse(user_id, idCourse);
                 return Response.noContent().build();
             } else {
                 return Response.status(Response.Status.UNAUTHORIZED).build();

@@ -27,8 +27,8 @@ public class FeedbackGymServiceImpl extends Service implements FeedbackGymServic
 
             st.setString(1,feedbackGym.getFeed());
             st.setInt(2,feedbackGym.getRating());
-            st.setLong(3,feedbackGym.getGym());
-            st.setLong(4,feedbackGym.getUser());
+            st.setLong(3,feedbackGym.getGymId());
+            st.setLong(4,feedbackGym.getUserId());
 
             st.execute();
 
@@ -57,10 +57,10 @@ public class FeedbackGymServiceImpl extends Service implements FeedbackGymServic
                     feedbackGym.setId(rs.getLong(1));
                     feedbackGym.setRating(rs.getInt(3));
                     feedbackGym.setFeed(rs.getString(2));
-                    feedbackGym.setUser(rs.getLong(6));
+                    feedbackGym.setUserId(rs.getLong(6));
                     feedbackGym.setUserName(rs.getString(7));
                     feedbackGym.setUserLastname(rs.getString(8));
-                    feedbackGym.setGym(rs.getLong(4));
+                    feedbackGym.setGymId(rs.getLong(4));
                     feedbackGym.setGymName(rs.getString(5));
 
                     feedbackGyms.add(feedbackGym);
@@ -86,10 +86,10 @@ public class FeedbackGymServiceImpl extends Service implements FeedbackGymServic
                     feedbackGym.setId(rs.getLong(1));
                     feedbackGym.setRating(rs.getInt(3));
                     feedbackGym.setFeed(rs.getString(2));
-                    feedbackGym.setUser(rs.getLong(6));
+                    feedbackGym.setUserId(rs.getLong(6));
                     feedbackGym.setUserName(rs.getString(7));
                     feedbackGym.setUserLastname(rs.getString(8));
-                    feedbackGym.setGym(rs.getLong(4));
+                    feedbackGym.setGymId(rs.getLong(4));
                     feedbackGym.setGymName(rs.getString(5));
                 }
             }
@@ -114,10 +114,10 @@ public class FeedbackGymServiceImpl extends Service implements FeedbackGymServic
                     feedbackGym.setId(rs.getLong(1));
                     feedbackGym.setRating(rs.getInt(3));
                     feedbackGym.setFeed(rs.getString(2));
-                    feedbackGym.setUser(rs.getLong(6));
+                    feedbackGym.setUserId(rs.getLong(6));
                     feedbackGym.setUserName(rs.getString(7));
                     feedbackGym.setUserLastname(rs.getString(8));
-                    feedbackGym.setGym(rs.getLong(4));
+                    feedbackGym.setGymId(rs.getLong(4));
                     feedbackGym.setGymName(rs.getString(5));
 
                     feedbackGyms.add(feedbackGym);
